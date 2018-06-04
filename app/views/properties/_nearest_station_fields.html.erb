@@ -1,0 +1,12 @@
+<%= field_set_tag '最寄り駅'+ (@property.nearest_stations.count+1).to_s do %>
+  <%= f.label :line_name %>
+  <%= f.text_field :line_name %>
+  
+  <%= f.label :station_name %>
+  <%= f.text_field :station_name %>
+  
+  <%= f.label :walk_minute %>
+  <%= f.number_field :walk_minute %>分
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "削除", '#', class: 'remove_fields' %>
+<% end %>

@@ -1,10 +1,10 @@
-<%= form_for(property) do |f| %>
-  <% if property.errors.any? %>
+<%= form_with model: @property do |f| %>
+  <% if @property.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
       <ul>
-      <% property.errors.full_messages.each do |message| %>
+      <% @property.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -35,19 +35,17 @@
     <%= f.label :remark %>
     <%= f.text_area :remark %>
   </div>
-  <hr>
-    <h2>最寄り駅1</h2>
+  
+  
     <%= f.fields_for :nearest_stations do |s| %>
-      
-      <%= s.label :line_name %>
-      <%= s.text_field :line_name %>
-      
-      <%= s.label :station_name %>
-      <%= s.text_field :station_name %>
-      
-      <%= s.label :walk_minute %>
-      <%= s.number_field :walk_minute %>分
+      <%= render "nearest_station_fields", f: s %>
     <% end %>
+    
+    <%= f.fields_for :nearest_stations do |s| %>
+      <%= render "nearest_station_fields", f: s %>
+    <% end %>
+    <%= link_to_add_fields "住所追加", f, :nearest_stations %>
+    
     
     
   
