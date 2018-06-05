@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_property, only: %i[show edit update destroy]
 
   def index
     @properties = Property.all
@@ -10,7 +10,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    @property.nearest_stations.build
+    2.times {@property.nearest_stations.build}
   end
 
   def edit

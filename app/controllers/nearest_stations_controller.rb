@@ -1,5 +1,5 @@
 class NearestStationsController < ApplicationController
-  before_action :set_nearest_station, only: %i[show, edit, update, destroy]
+  before_action :set_nearest_station, only: %i[show edit update destroy]
 
   def index
     @nearest_stations = NearestStation.all

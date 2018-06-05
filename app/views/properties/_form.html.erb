@@ -41,9 +41,7 @@
       <%= render "nearest_station_fields", f: s %>
     <% end %>
     
-    <%= f.fields_for :nearest_stations do |s| %>
-      <%= render "nearest_station_fields", f: s %>
-    <% end %>
+    
     <%= link_to_add_fields "住所追加", f, :nearest_stations %>
     
     
