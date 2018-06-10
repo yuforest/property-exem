@@ -18,17 +18,17 @@ Property-Exem
 
 ## Usage
 このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
-'$ git clone git@github.com:yuforest/property-exem.git'
+    $ git clone git@github.com:yuforest/property-exem.git
 
 次に、以下のコマンドで必要になる Ruby Gems をインストールします。
 
-'$ bundle install'
+    $ bundle install
 その後、データベースへのマイグレーションを実行します。
 
-'$ rails db:migrate'
+    $ rails db:migrate
 これで、Railsサーバーを立ち上げる準備が整っているはずです。
 
-'$ rails server'
+    $ rails server
 
 ## Licence
 
