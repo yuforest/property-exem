@@ -1,42 +1,40 @@
-このリポジトリは、技術力テスト用のリポジトリです。
 
-## 開発するアプリケーションの概要
-賃貸情報物件情報画面のCRUDを実装お願い致します。既にrails newしただけのアプリケーションのソースコードがありますので、その上に実装してください。
+Property-Exem
+====
 
-Ruby on Railsに慣れている方であれば1〜2時間程度で出来るボリュームと見積もっております。
 
-## 開発環境
-### 言語・ミドルウェアなど
+## Description
+不動産管理アプリケーションです。
+不動産の情報を登録し、最寄り駅の個数を任意の数登録できます。
+
+## Requirement
 - Ruby 2.3.1
-- Ruby on Rails 5.0.0
-- Sqlite
+- Rails 5.1.6
+- PostgreSQL 9.3.18
 
-### 納品の方法
-まず、このリポジトリをcloneして、ご自身のアカウント内にリポジトリを作成してください(publicで問題ありません)。このとき**必ずリポジトリ名を適当な名称に変更**しておいてください(例: rat-giraffe)。
+## Function
+- 不動産の管理
+- 不動産に紐づく最寄り駅の設定
 
-新しいブランチを作り、その上で作業を行い、ご自身のリポジトリにpull requestを出してください(clone元にpull requestを出さないように注意ください)。
+## Usage
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+'$ git clone git@github.com:yuforest/property-exem.git'
 
-そのpull requestのリンクをお知らせいただいて納品となります。
+次に、以下のコマンドで必要になる Ruby Gems をインストールします。
 
-## 質疑について
-仕様に関する質疑は着手前・後一度だけ応対可能です。必要な事項はまとめてご質問ください。
+'$ bundle install'
+その後、データベースへのマイグレーションを実行します。
 
-## スケジュール
-テスト開始から1週間程度
+'$ rails db:migrate'
+これで、Railsサーバーを立ち上げる準備が整っているはずです。
 
-## 仕様
-- 賃貸情報物件情報画面のCRUDのキャプチャをファイル添付します。キャプチャの通り実装をお願いします。
-- 最寄り駅情報は数を増やす可能性がありますので、考慮した実装をお願い致します。
-- テストコードの実装は不要です
+'$ rails server'
 
-### 一覧
-![index](https://cloud.githubusercontent.com/assets/1818925/20509523/91902df2-b0ac-11e6-9f3b-adce73dbedf8.png)
+## Licence
 
-### 閲覧
-![show](https://cloud.githubusercontent.com/assets/1818925/20509520/918d29ae-b0ac-11e6-8310-15474fcd5633.png)
+このアプリケーションはMITライセンスを適用しています。
+RICENSE.txtを見てください。
 
-### 登録
-![new](https://cloud.githubusercontent.com/assets/1818925/20509522/918e87b8-b0ac-11e6-8f4b-5f8ba4945894.png)
+## Author
 
-### 編集
-![edit](https://cloud.githubusercontent.com/assets/1818925/20509521/918df348-b0ac-11e6-8eef-6d2e7c833d9a.png)
+[yuforest](https://github.com/yuforest)

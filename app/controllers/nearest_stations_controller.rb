@@ -19,7 +19,8 @@ class NearestStationsController < ApplicationController
     @nearest_station = NearestStation.new(nearest_station_params)
 
     if @nearest_station.save
-      redirect_to @nearest_station, notice: 'Nearest station was successfully created.'
+      redirect_to @nearest_station, 
+      notice: 'Nearest station was successfully created.'
     else
       render :new
     end
@@ -27,7 +28,8 @@ class NearestStationsController < ApplicationController
 
   def update
     if @nearest_station.update(nearest_station_params)
-      redirect_to @nearest_station, notice: 'Nearest station was successfully updated.'
+      redirect_to @nearest_station,
+      notice: 'Nearest station was successfully updated.'
     else
       render :edit
     end
@@ -35,7 +37,8 @@ class NearestStationsController < ApplicationController
 
   def destroy
     @nearest_station.destroy
-    redirect_to nearest_stations_url, notice: 'Nearest station was successfully destroyed.'
+    redirect_to nearest_stations_url,
+    notice: 'Nearest station was successfully destroyed.'
     
   end
 
@@ -46,6 +49,7 @@ class NearestStationsController < ApplicationController
     end
 
     def nearest_station_params
-      params.require(:nearest_station).permit(:line_name, :station_name, :walk_minute)
+      params.require(:nearest_station)
+      .permit(:line_name, :station_name, :walk_minute)
     end
 end

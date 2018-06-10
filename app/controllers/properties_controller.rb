@@ -10,7 +10,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    2.times {@property.nearest_stations.build}
+    @property.nearest_stations.build
   end
 
   def edit
@@ -38,7 +38,7 @@ class PropertiesController < ApplicationController
   
   def destroy
     @property.destroy
-    format.html { redirect_to properties_url, notice: 'Property was successfully destroyed.' }
+    redirect_to properties_url, notice: 'Property was successfully destroyed.'
   end
 
   private
@@ -48,6 +48,8 @@ class PropertiesController < ApplicationController
     end
 
     def property_params
-      params.require(:property).permit(:name, :rent, :address, :age, :remark, nearest_stations_attributes: [:line_name, :station_name, :walk_minute])
+      params.require(:property).permit(:name, :rent, :address, :age, :remark,
+      nearest_stations_attributes: [:line_name, :station_name, :walk_minute,
+      :_destroy])
     end
 end
