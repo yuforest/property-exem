@@ -19,7 +19,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    binding.pry
+    
     
     if @property.save
       redirect_to @property, notice: 'Property was successfully created.'
@@ -50,7 +50,7 @@ class PropertiesController < ApplicationController
 
     def property_params
       params.require(:property).permit(:name, :rent, :address, :age, :remark,
-      nearest_stations_attributes: [:line_name, :station_name, :walk_minute,
+      nearest_stations_attributes: [:id, :line_name, :station_name, :walk_minute,
       :_destroy])
     end
 end
