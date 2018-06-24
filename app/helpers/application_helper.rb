@@ -8,13 +8,6 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
   
-  def stations_counter(f)
-    number = @property.nearest_stations.count
-    for i in 0..number
-      if (f.id.to_i) - @property.nearest_stations.first.id == i
-        return i
-      end
-    end
-  end
+  
   
 end

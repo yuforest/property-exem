@@ -19,7 +19,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    
+    binding.pry
     
     if @property.save
       redirect_to @property, notice: 'Property was successfully created.'
